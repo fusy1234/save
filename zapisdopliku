@@ -1,5 +1,5 @@
 #include <fstream>
 
 fstream plik;
-plik.open("nazwa.txt", ios:in);
+plik.open("nazwa.txt", ios:in);   // ios:in do odczytu ios:out do zapisu
 plik.close();
