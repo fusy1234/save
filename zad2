@@ -1,0 +1,43 @@
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+
+void bubbleSort(int tab[], int n) {
+    int temp;
+    for (int i = 0; i < n; i++) {
+       
+        for (int j = 0; j < n - 1; j++) {
+            if (tab[j] > tab[j+1]) {
+                temp = tab[j];
+                tab[j] = tab[j+1];
+                tab[j+1] = temp;
+            }
+        }
+       
+   }
+}
+
+int main()
+{
+    srand(time(NULL));
+    int w;
+    cout << "Wprowadź rozmiar tablicy: " << endl;
+    cin>>w;
+    int tab[w];
+    for (int i = 0; i < w; i++) {
+        tab[i] = rand()%(99-10+1)+10;
+        cout << tab[i] << " ";
+    }
+    cout << endl << endl;
+    
+    bubbleSort(tab, w);
+    
+    for (int i = 0; i < w; i++) {
+        cout << tab[i] << " ";
+    }
+    
+    return 0;
+}
