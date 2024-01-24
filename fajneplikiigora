@@ -1,0 +1,158 @@
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+#include <fstream>
+using namespace std;
+void dectobin(int a , int p){
+int tab[32];
+int i  = 0;
+while(a!=0){
+    tab[i]=a%p;
+    a=a/p;
+    i++;
+}
+for(int  j=i-1;j>=0;j--){
+        cout << tab[j];
+    }
+}
+
+
+
+
+void dectop(int a,int p)
+        {
+      int tab[32];
+      int i = 0;
+      while(a!=0){
+        tab[i]=a%p;
+        a=a/p;
+        i++;
+      }
+      for(int j=i-1;j>=0;j--)
+      {
+          switch(tab[j]){
+      case 10:
+        cout << "A";
+        break;
+      case 11:
+        cout << "B";
+        break;
+        case 12:
+        cout << "C";
+        break;
+        case 13:
+        cout << "D";
+        break;
+        case 14:
+        cout << "E";
+        break;
+        case 15:
+        cout << "F";
+        break;
+
+          }
+      }
+       }
+
+
+    void sito(int n){
+ bool tab[n+1];
+ for(int i=0;i<=n;i++){
+    tab[i]=1;
+ }
+ for(int j =2 ;j*j<n+1;j++){
+    for(int k = j+1;k<n+1;k++){
+        if(k%j==0){
+            tab[k]=0;
+        }
+    }
+ }
+ for(int  o =2;o<n+1;o++){
+    if(tab[o]==1){
+        cout << o << " ";
+    }
+ }
+    }
+
+    void bubblesort(int tab[], int n){
+    int temp;
+    for(int k=0;k<n-1;k++){
+        for(int  i=0;i<n-1;i++){
+            if(tab[i]>tab[i+1]){
+                temp=tab[i];
+                tab[i]=tab[i+1];
+                tab[i+1]=temp;
+            }
+        }
+    }
+    }
+
+int main()
+{
+    fstream plik;
+    plik.open("dane.txt", ios::out);
+    srand(time(NULL));
+cout << "Przed posortowaniem"<<endl;
+    int tab[10];
+    for(int i=0;i<10;i++){
+        tab[i]=rand()%90+10;
+        cout << tab[i]<<" ";
+    }
+    cout << endl;
+    cout << "po posortowaniu"<<endl;
+    bubblesort(tab,10);
+    for(int i=0;i<10;i++){
+        cout << tab[i]<<" ";
+        plik << tab[i]<<" ";
+    }
+
+    plik.close();
+
+
+
+
+
+  dectobin(255,16);
+
+
+
+
+
+cout << endl;
+cout << endl;
+cout << endl;
+
+
+int x,y;
+
+cin >> x;
+cin >> y;
+
+    int tabl[x][y];
+    for(int i=0;i<x;i++){
+            for(int j=0;j<y;j++){
+        tabl[i][j]=rand()%90+10;
+        cout << tabl[i][j]<<" ";
+    }
+    cout << endl;
+    }
+
+       return 0;
+}
+/*
+otwarcie pliku
+fstream plik;
+plik.open("nazwa.txt", ios::out);
+
+zapis do pliku jest jak cout tylko zamiast cout dajemy nazwe zmiennej plikowej
+cout << tab[xyz]<<" ";
+plik << tab[xyz[<<" ";
+
+zamknięcie pliku ;
+plik.close();
+
+
+
+
+
+*/
