@@ -1,5 +1,7 @@
 #include <fstream>
 
 fstream plik;
-plik.open("nazwa.txt", ios:in);   // ios:in do odczytu ios:out do zapisu
+plik.open("nazwa.txt", ios:out);   // ios:in do odczytu ios:out do zapisu
+
+plik << " cos nigger nigger cos" << endl; // tak sie zapisuje do pliku text
 plik.close();
