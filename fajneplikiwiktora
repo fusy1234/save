@@ -1,0 +1,163 @@
+ #include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+void bubblesort(int tab[], int n) {
+    int temp;
+    for (int k = 0; k < n - 1; k++) {
+        for (int i = 0; i < n - k - 1; i++) {
+            if (tab[i] > tab[i + 1]) {
+                temp = tab[i];
+                tab[i] = tab[i + 1];
+                tab[i + 1] = temp;
+            }
+        }
+    }
+}
+void decToHex(int a,int p){
+    int tab[32];
+    int i =0;
+    while(a!=0){
+        tab[i] = a%p;
+        a=a/p;
+        i++;
+    }
+    for(int j=i-1;j>=0;j--){
+        switch(tab[j]) {
+            case 10:
+                cout << "A";
+                break;
+            case 11:
+                cout << "B";
+                break;
+            case 12:
+                cout << "C";
+                break;
+            case 13:
+                cout << "D";
+                break;
+            case 14:
+                cout << "E";
+                break;
+            case 15:
+                cout << "F";
+                break;
+            default:
+                cout << tab[j];
+        }
+    }
+
+
+}
+void erastotenes(int n)
+{
+    int tab[n+1];
+    for(int i= 0; i<n+1; i++)
+    {
+        tab[i] = 1;
+
+    }
+    for(int j =2; j*j<n+1; j++)
+    {
+        for(int k =j+1; k<n+1; k++)
+        {
+            if(k%j==0)
+            {
+                tab[k] = 0;
+            }
+        }
+
+    }
+    for(int l= 0; l<n+1; l++)
+    {
+        if(tab[l] == 1)
+        {
+            cout<<l<<" ";
+        }
+    }
+}
+bool czyPierwsza(int liczba) {
+    if (liczba < 2) {
+        return false;
+    }
+    for (int i = 2; i * i <= liczba; ++i) {
+        if (liczba % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    srand(time(NULL));
+    int n = 20;
+    int tab[n];
+
+    for (int i = 0; i < n; i++) {
+        tab[i] = rand() % 100 + 1;
+        cout << tab[i] << " ";
+    }
+    cout << endl;
+
+    bubblesort(tab, n);
+
+    ofstream zapis("dane.txt");
+    for (int i = 0; i < n; i++) {
+        cout << tab[i] << " ";
+        zapis << tab[i] << endl;
+    }
+    zapis.close();
+
+
+    int a=0;
+    int p=0;
+    cout << "Podaj liczbe " << endl;
+    cin >> a;
+    cout <<"Podaj system liczenia(dwojkowy, etc)" << endl;
+    cin >> p;
+    decToHex(a,p);
+
+    int z;
+    cout<<"Podaj liczbe calkowita wieksza od 2: ";
+    cin>>z;
+    erastotenes(z);
+
+
+    int d;
+
+    cout << "Podaj liczbe d: ";
+    cin >> d;
+
+    if (d < 2) {
+        cout << "Liczba n musi byc wieksza lub rowna 2." << endl;
+        return 1;
+    }
+
+    int liczbaPierwszych = 0;
+    ofstream zapisDoPliku("liczbyPierwsze.txt");
+
+    for (int i = 2; i <= d; ++i) {
+        if (czyPierwsza(i)) {
+            zapisDoPliku << i << endl;
+            liczbaPierwszych++;
+        }
+    }
+
+    zapisDoPliku.close();
+
+    // Wyświetlanie wyników
+    cout << "Ilosc liczb pierwszych w przedziale od 2 do " << d << ": " << liczbaPierwszych << endl;
+
+    if (liczbaPierwszych % 2 == 0) {
+        cout  << liczbaPierwszych << " Ilosc tych liczb zostala zapisana do pliku " << endl;
+    }
+
+
+
+    return 0;
+
+
+}
