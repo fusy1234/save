@@ -2,6 +2,6 @@
 
 fstream plik;
 plik.open("nazwa.txt", ios:out);   // ios:in do odczytu ios:out do zapisu
-
+plik >> a; // trzeba miec zmienna a przed tym ale ogln tak sie pobiera cn
 plik << " cos nigger nigger cos" << endl; // tak sie zapisuje do pliku text
 plik.close();
