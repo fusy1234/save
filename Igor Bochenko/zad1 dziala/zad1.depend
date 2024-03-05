@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1706783325 source:c:\users\egzamin\desktop\igor bochenko\zad1\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<stdlib.h>
+
+1706783326 source:e:\igor bochenko\igor bochenko\igor bochenko\zad1 dziala\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<stdlib.h>
+

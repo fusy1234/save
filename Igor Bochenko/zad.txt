@@ -1,0 +1,30 @@
+zad 1.
+
+z pliku pobrać rozmiar tablicy jedno wymiarowej wypisać podaną liczbę następnie 
+wypełnić tablicę o tym rozmiarze liczbami losowymi całkowitymi od 10 do 50 wyświetlić
+otrzymaną tablice posortować jej elementy i wyświetlić
+
+zad 2.
+
+tablice 2 wymiarową 7 wierszy 3 kolumny wypełnić tak aby 1 i ostatnia kolumna zawierała liczby 1 na pozostałych 
+komórkach 0 wysłać otrzymaną tablice do pliku 
+
+zad 3.
+
+ze zbioru od 2 do N gdzie n podaje uzytkownik wypisać wszystkie liczby pierwsze 
+
+zad 4.
+
+z pliku pobrać 6 liczb całkowitych nie ujemnych i obok kazdej z nich 
+napisać postać binarną tej liczby 
+
+zad 5.
+
+tablica 2 wymiarową gdzie liość wierszy i kolumn podaje użytkownik wypełnić 
+tak aby w komórce 0,0 była liczba 8 każda następna wartość idąc po wierszach było o 3 większe niż wartość wcześniejszej kartki 
+
+
+zad 6.
+tablica 2 wymiarowa 10x10 wypełnić liczbami losowymi 3 cyfrowymi pokazać otrzymaną tablice 
+a następnie utworzyć nową tablcie gdzie k-ta kolumna będzie zamieniona miejscami z n miejscem gdzie k i n
+poda użytkownik 
